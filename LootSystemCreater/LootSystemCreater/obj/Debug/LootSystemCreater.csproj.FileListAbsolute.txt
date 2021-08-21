@@ -1,0 +1,10 @@
+F:\Repos\dotNET\LootSystemCreater\LootSystemCreater\bin\Debug\LootSystemCreater.exe.config
+F:\Repos\dotNET\LootSystemCreater\LootSystemCreater\bin\Debug\LootSystemCreater.exe
+F:\Repos\dotNET\LootSystemCreater\LootSystemCreater\bin\Debug\LootSystemCreater.pdb
+F:\Repos\dotNET\LootSystemCreater\LootSystemCreater\obj\Debug\LootSystemCreater.csprojAssemblyReference.cache
+F:\Repos\dotNET\LootSystemCreater\LootSystemCreater\obj\Debug\LootSystemCreater.MainMenu.resources
+F:\Repos\dotNET\LootSystemCreater\LootSystemCreater\obj\Debug\LootSystemCreater.Properties.Resources.resources
+F:\Repos\dotNET\LootSystemCreater\LootSystemCreater\obj\Debug\LootSystemCreater.csproj.GenerateResource.cache
+F:\Repos\dotNET\LootSystemCreater\LootSystemCreater\obj\Debug\LootSystemCreater.csproj.CoreCompileInputs.cache
+F:\Repos\dotNET\LootSystemCreater\LootSystemCreater\obj\Debug\LootSystemCreater.exe
+F:\Repos\dotNET\LootSystemCreater\LootSystemCreater\obj\Debug\LootSystemCreater.pdb

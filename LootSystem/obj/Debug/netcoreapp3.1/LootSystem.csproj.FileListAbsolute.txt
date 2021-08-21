@@ -1,0 +1,13 @@
+F:\Repos\dotNET\LootSystem\bin\Debug\netcoreapp3.1\LootSystem.exe
+F:\Repos\dotNET\LootSystem\bin\Debug\netcoreapp3.1\LootSystem.deps.json
+F:\Repos\dotNET\LootSystem\bin\Debug\netcoreapp3.1\LootSystem.runtimeconfig.json
+F:\Repos\dotNET\LootSystem\bin\Debug\netcoreapp3.1\LootSystem.runtimeconfig.dev.json
+F:\Repos\dotNET\LootSystem\bin\Debug\netcoreapp3.1\LootSystem.dll
+F:\Repos\dotNET\LootSystem\bin\Debug\netcoreapp3.1\LootSystem.pdb
+F:\Repos\dotNET\LootSystem\obj\Debug\netcoreapp3.1\LootSystem.csprojAssemblyReference.cache
+F:\Repos\dotNET\LootSystem\obj\Debug\netcoreapp3.1\LootSystem.AssemblyInfoInputs.cache
+F:\Repos\dotNET\LootSystem\obj\Debug\netcoreapp3.1\LootSystem.AssemblyInfo.cs
+F:\Repos\dotNET\LootSystem\obj\Debug\netcoreapp3.1\LootSystem.csproj.CoreCompileInputs.cache
+F:\Repos\dotNET\LootSystem\obj\Debug\netcoreapp3.1\LootSystem.dll
+F:\Repos\dotNET\LootSystem\obj\Debug\netcoreapp3.1\LootSystem.pdb
+F:\Repos\dotNET\LootSystem\obj\Debug\netcoreapp3.1\LootSystem.genruntimeconfig.cache
