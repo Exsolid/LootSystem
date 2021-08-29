@@ -66,6 +66,26 @@ namespace LootSystemCreater
         }
         private void addItemToGroupB_Click(object sender, EventArgs e)
         {
+            if(groupsCB.SelectedIndex < 0)
+            {
+                groupErrorL.Text = "No group created yet!";
+                return;
+            }
+            //Copy row
+            for(int rowI = 0; rowI < groupsItemTabel.SelectedRows.Count; rowI++)
+            {
+                DataGridViewRow row = (DataGridViewRow)groupsItemTabel.SelectedRows[rowI].Clone();
+                for(int cellI = 0; cellI < row.Cells.Count; cellI++)
+                {
+                    row.Cells[cellI].Value = groupsItemTabel.SelectedRows[rowI].Cells[cellI].Value;
+                }
+                groupsTabel.Rows.Add(row);
+            }
+            //Remove row
+            for (int rowI = 0; rowI < groupsItemTabel.SelectedRows.Count; rowI++)
+            {
+                groupsItemTabel.Rows.Remove(groupsItemTabel.SelectedRows[rowI]);
+            }
         }
 
         private void updateGroupTabels()
@@ -75,6 +95,7 @@ namespace LootSystemCreater
             groupsItemTabel.Columns.Clear();
             groupsTabel.Rows.Clear();
             groupsTabel.Columns.Clear();
+            //Copy all variables to groups
             foreach (DataGridViewColumn col in itemTable.Columns)
             {
                 groupsItemTabel.Columns.Add((DataGridViewColumn)col.Clone());
@@ -85,6 +106,7 @@ namespace LootSystemCreater
                 groupsTabel.Columns.Add((DataGridViewColumn)col.Clone());
             }
 
+            //Fill values
             for (int rowI = 0; rowI < itemTable.RowCount; rowI++)
             {
                 if (mainData.getItem(rowI).getValueAsString(0) == "")
@@ -127,10 +149,16 @@ namespace LootSystemCreater
             itemTable.AllowUserToAddRows = true;
             if (!isEmpty(addItemTB.Text))
             {
-                DataGridViewRow row = (DataGridViewRow)itemTable.Rows[0].Clone();
-                row.Cells[0].Value = addItemTB.Text;
-                itemTable.Rows.Add(row);
-                mainData.newItem();
+                try
+                {
+                    mainData.newItem(addItemTB.Text);
+                    DataGridViewRow row = (DataGridViewRow)itemTable.Rows[0].Clone();
+                    row.Cells[0].Value = addItemTB.Text;
+                    itemTable.Rows.Add(row);
+                }catch(Exception ex)
+                {
+                    itemErrorL.Text = ex.Message;
+                }
             }
             else
             {

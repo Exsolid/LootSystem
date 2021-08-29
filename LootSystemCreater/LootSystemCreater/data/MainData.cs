@@ -43,6 +43,17 @@ namespace LootSystemCreater.data
             }
             items.Add(item);
         }
+        public void newItem(string itemName)
+        {
+            if ((from e in items where e.getValueAsString(0).Equals(itemName) select e).Count() != 0) throw new Exception("Item name not unique!");
+            Item item = new Item();
+            foreach (string varName in itemArgs.Keys)
+            {
+                item.setValue(itemArgs[varName], varName);
+            }
+            item.changeValue<string>("itemName", itemName);
+            items.Add(item);
+        }
 
         public void addItemArg(string varName, string varTypeName)
         {
