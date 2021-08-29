@@ -106,23 +106,15 @@ namespace LootSystemCreater
                 groupsTabel.Columns.Add((DataGridViewColumn)col.Clone());
             }
 
-            //Fill values
-            for (int rowI = 0; rowI < itemTable.RowCount; rowI++)
+            //Read saved data
+            for (int rowI = 0; rowI < mainData.Items.Count; rowI++)
             {
-                if (mainData.getItem(rowI).getValueAsString(0) == "")
+                DataGridViewRow row = (DataGridViewRow)itemTable.Rows[rowI].Clone();
+                for (int colI = 0; colI < row.Cells.Count; colI++)
                 {
-                    groupErrorL.Text = "The item list incomplete! Did you forget to save?";
-                    break;
+                    row.Cells[colI].Value = mainData.getItem(rowI).getValueAsString(colI);
                 }
-                groupsItemTabel.Rows.Add((DataGridViewRow)itemTable.Rows[rowI].Clone());
-            }
-
-            for (int rowI = 0; rowI < groupsItemTabel.RowCount; rowI++)
-            {
-                for (int colI = 0; colI < groupsItemTabel.ColumnCount; colI++)
-                {
-                    groupsItemTabel.Rows[rowI].Cells[colI].Value = mainData.getItem(rowI).getValueAsString(colI);
-                }
+                groupsItemTabel.Rows.Add(row);
             }
         }
 
@@ -203,19 +195,19 @@ namespace LootSystemCreater
                             switch (getTypeForHeader(itemTable.Columns[argI].HeaderText))
                             {
                                 case "int":
-                                    mainData.getItem(i).changeValue<int>(getNameForHeader(itemTable.Columns[argI].HeaderText), itemTable.Rows[0].Cells[argI].Value);
+                                    mainData.getItem(i).changeValue<int>(getNameForHeader(itemTable.Columns[argI].HeaderText), itemTable.Rows[i].Cells[argI].Value);
                                     break;
                                 case "string":
-                                    mainData.getItem(i).changeValue<string>(getNameForHeader(itemTable.Columns[argI].HeaderText), itemTable.Rows[0].Cells[argI].Value);
+                                    mainData.getItem(i).changeValue<string>(getNameForHeader(itemTable.Columns[argI].HeaderText), itemTable.Rows[i].Cells[argI].Value);
                                     break;
                                 case "char":
-                                    mainData.getItem(i).changeValue<char>(getNameForHeader(itemTable.Columns[argI].HeaderText), itemTable.Rows[0].Cells[argI].Value);
+                                    mainData.getItem(i).changeValue<char>(getNameForHeader(itemTable.Columns[argI].HeaderText), itemTable.Rows[i].Cells[argI].Value);
                                     break;
                                 case "float":
-                                    mainData.getItem(i).changeValue<float>(getNameForHeader(itemTable.Columns[argI].HeaderText), itemTable.Rows[0].Cells[argI].Value);
+                                    mainData.getItem(i).changeValue<float>(getNameForHeader(itemTable.Columns[argI].HeaderText), itemTable.Rows[i].Cells[argI].Value);
                                     break;
                                 case "double":
-                                    mainData.getItem(i).changeValue<double>(getNameForHeader(itemTable.Columns[argI].HeaderText), itemTable.Rows[0].Cells[argI].Value);
+                                    mainData.getItem(i).changeValue<double>(getNameForHeader(itemTable.Columns[argI].HeaderText), itemTable.Rows[i].Cells[argI].Value);
                                     break;
                             }
                         }catch(Exception ex)
